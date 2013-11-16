@@ -23,7 +23,11 @@ set cpo&vim
 
 
 " Highlight group that emulates cursor appearance during digraph insertion...
-highlight HUDG_Cursor_Emulation  ctermfg=blue ctermbg=white
+if has("gui_running")
+	highlight HUDG_Cursor_Emulation  guifg=blue guibg=white
+else
+	highlight HUDG_Cursor_Emulation  ctermfg=blue ctermbg=white
+end
 
 
 " This elaboration intercepts the timeouts on regular getchar()...
